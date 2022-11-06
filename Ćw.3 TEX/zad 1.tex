@@ -1,0 +1,178 @@
+\documentclass[12pt, letterpaper, titlepage]{article}
+\usepackage[left=3.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage[MeX]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{amsmath} %pakiet matematyczny
+\usepackage{amssymb} %pakiet dodatkowych symboli
+\usepackage{multirow}
+\usepackage{xcolor}
+\title{ćw3 latex}
+\author{Rafał Pietrzak}
+\date{Listopad 2022}
+\begin{document}
+\maketitle
+
+\section{.zadanie}
+
+\begin{table}[h]
+\centering\caption{Przykładowy system decyzyjny (U,A,d), modelujący problem diagnozy medycznej, której efektem jest decyzja o wykonaniu lub nie wykonaniu operacji wycięcia wyrostka robaczkowego, U = \{$u_{1},u_{2},....,u_{10}$\} ,A = \{$a_{1},a_{2}$\},$d\in D$ =\{TAK,NIE\}}
+\begin{tabular}{c|c c c}
+\hline
+\hline
+Pacjent & Ból brzucha & Temperatura ciała & Operacja\\
+\hline
+u1 & Mocny & Wysoka & \textcolor{green}{Tak}\\
+
+u2 & Średni & Wysoka & \textcolor{green}{Tak}\\
+
+u3 & Mocny & Średnia & \textcolor{green}{Tak}\\
+
+u4 & Mocny & Niska & \textcolor{green}{Tak}\\
+
+u5 & Średni & Średnia &  \textcolor{green}{Tak}\\
+
+u6 & Średni & Średnia & \textcolor{red}{Nie} \\
+
+u7 & Mały & Wysoka & \textcolor{red}{Nie}\\
+
+u8 & Mały & Niska & \textcolor{red}{Nie}\\
+
+u9 & Mocny & Niska & \textcolor{red}{Nie}\\
+
+u10 & Mały & Średnia & \textcolor{red}{Nie}\\
+\hline
+\hline
+
+\end{tabular}
+\end{table}
+
+
+\newpage
+\section{.zadanie}
+
+\begin{table}[h]
+\centering\caption{Bramka Logiczna AND}
+\begin{tabular}{c|c|c}
+
+p & q & s\\
+\hline
+\hline
+0 & 0 & 0\\
+\hline
+0 & 1 & 0\\
+\hline
+1 & 0 & 0\\
+\hline
+1 & 1 & 1\\
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering\caption{Bramka Logiczna NOT}
+\begin{tabular}{c|c|c}
+
+p & q & s\\
+\hline
+\hline
+0 &  & 1\\
+\hline
+1 &  & 0\\
+
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering\caption{Bramka Logiczna NAND}
+\begin{tabular}{c|c|c}
+
+p & q & s\\
+\hline
+\hline
+0 & 0 & 1\\
+\hline
+0 & 1 & 1\\
+\hline
+1 & 0 & 1\\
+\hline
+1 & 1 & 0\\
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering\caption{Bramka Logiczna OR}
+\begin{tabular}{c|c|c}
+
+p & q & s\\
+\hline
+\hline
+0 & 0 & 0\\
+\hline
+0 & 1 & 1\\
+\hline
+1 & 0 & 1\\
+\hline
+1 & 1 & 1\\
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering\caption{Bramka Logiczna OR}
+\begin{tabular}{c|c|c}
+
+p & q & s\\
+\hline
+\hline
+0 & 0 & 0\\
+\hline
+0 & 1 & 1\\
+\hline
+1 & 0 & 1\\
+\hline
+1 & 1 & 1\\
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering\caption{Bramka Logiczna NOR}
+\begin{tabular}{c|c|c}
+
+p & q & s\\
+\hline
+\hline
+0 & 0 & 1\\
+\hline
+0 & 1 & 0\\
+\hline
+1 & 0 & 0\\
+\hline
+1 & 1 & 0\\
+
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering\caption{Bramka Logiczna XOR}
+\begin{tabular}{c|c|c}
+
+p & q & s\\
+\hline
+\hline
+0 & 0 & 0\\
+\hline
+0 & 1 & 1\\
+\hline
+1 & 0 & 1\\
+\hline
+1 & 1 & 0\\
+
+\end{tabular}
+\end{table}
+
+\end{document}
