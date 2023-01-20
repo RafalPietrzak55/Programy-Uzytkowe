@@ -1,0 +1,6 @@
+--> cd C:\scilab
+ ans  =
+
+  "C:\scilab"
+
+--> diary('logarytmy')
