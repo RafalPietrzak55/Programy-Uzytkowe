@@ -1,0 +1,338 @@
+//Program C++ który robi zadania przy pomocy pętli for oraz przy pomocy operatora for_each
+//*Zdefiniuj i inicjalizuj wektor z 10 elementami typu char i wypisz go na konsoli.
+//*Zdefiniuj i inicjalizuj wektor z 10 liczbami typu int i wypisz na konsoli parzysty liczby.
+//*Zdefiniuj i inicjalizuj wektor z 7 liczbami typu double i wypisz na konsoli ich wartości bezwzględny(można użyć bibliotek : math.h, #include <cmath>).
+//*Zdefiniuj i inicjalizuj wektor z 5 słowami(typ string).Wypisz każde słowo w nowym wiersze na konsoli i przez dwukropek ilość liter w nim.
+
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <cmath>
+
+int main()
+{
+    // Zdefiniowanie i inicjalizacja wektora z 10 elementami typu char
+    std::vector<char> vec_char = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' };
+
+    // Wypisanie wektora za pomocą pętli for
+    std::cout << "Wektor z 10 elementami typu char:" << std::endl;
+    for (int i = 0; i < vec_char.size(); i++)
+    {
+        std::cout << vec_char[i] << " ";
+    }
+    std::cout << std::endl;
+
+    // Wypisanie wektora za pomocą operatora for_each
+    std::cout << "Wektor z 10 elementami typu char (for_each):" << std::endl;
+    for_each(vec_char.begin(), vec_char.end(), [](char c) {std::cout << c << " "; });
+    std::cout << std::endl;
+
+    // Zdefiniowanie i inicjalizacja wektora z 10 liczbami typu int
+    std::vector<int> vec_int = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+    // Wypisanie parzystych liczb z wektora za pomocą pętli for
+    std::cout << "Parzyste liczby z wektora z 10 liczbami typu int:" << std::endl;
+    for (int i = 0; i < vec_int.size(); i++)
+    {
+        if (vec_int[i] % 2 == 0)
+        {
+            std::cout << vec_int[i] << " ";
+        }
+    }
+    std::cout << std::endl;
+
+    // Zdefiniowanie i inicjalizacja wektora z 7 liczbami typu double
+    std::vector<double> vec_double = { -1.5, 2.5, -3.5, 4.5, -5.5, 6.5, -7.5 };
+
+    // Wypisanie wartości bezwzględnych z wektora za pomocą pętli for
+    std::cout << "Wartosci bezwzgledne z wektora z 7 liczbami typu double:" << std::endl;
+    for (int i = 0; i < vec_double.size(); i++)
+    {
+        std::cout << abs(vec_double[i]) << " ";
+    }
+    std::cout << std::endl;
+
+    // Zdefiniowanie i inicjalizacja wektora z 5 słowami (typ string)
+    std::vector<std::string> vec_string = { "hello", "world", "c++", "programming", "language" };
+
+    // Wypisanie słów z wektora za pomocą pętli for
+    std::cout << "Słowa z wektora (for):" << std::endl;
+    for (int i = 0; i < vec_string.size(); i++)
+    {
+        std::cout << vec_string[i] << " : " << vec_string[i].length() << std::endl;
+    }
+
+    // Wypisanie słów z wektora za pomocą operatora for_each
+    std::cout << "Słowa z wektora (for_each):" << std::endl;
+    for_each(vec_string.begin(), vec_string.end(), [](std::string s) {std::cout << s << " : " << s.length() << std::endl; });
+
+    return 0;
+}
+    //KONIEC PROGRAMU
+
+
+/*Napisz program C++, którym przy pomocy pętli for oraz przy pomocy operatora for_each :
+     * Zdefiniuj i zinicjalizuj dwie tablicy z 4 elementami.
+     * Oblicz trzecią tablicę, w której i - ty element będzie sumę i - tych elementów dwóch poprzednich tablic.
+     * Zmień program tak, żeby ilość elementów w tablicach była const int N.*/
+#include <iostream>
+
+int main() {
+    const int N = 4;
+    int tab1[N] = { 1, 2, 3, 4 };
+    int tab2[N] = { 5, 6, 7, 8 };
+    int tab3[N];
+
+    for (int i = 0; i < N; i++) {
+        tab3[i] = tab1[i] + tab2[i];
+    }
+
+    for (int i = 0; i < N; i++) {
+        std::cout << tab3[i] << " ";
+    }
+
+    return 0;
+}
+    //KONIEC PROGRAMU
+
+
+/*Program C++, który oblicza i wyświetla sumę dwóch macierzy R × C. Przetestuj dla R = 3, C = 2.*/
+#include <iostream>
+    using namespace std;
+
+    int main()
+    {
+        const int R = 3;
+        const int C = 2;
+        int mat1[R][C];
+        int mat2[R][C];
+        int sum[R][C];
+
+        cout << "Wprowadź elementy pierwszej macierzy: " << endl;
+        for (int i = 0; i < R; i++)
+        {
+            for (int j = 0; j < C; j++)
+            {
+                cin >> mat1[i][j];
+            }
+        }
+        cout << "Wprowadź elementy drugiej macierzy: " << endl;
+        for (int i = 0; i < R; i++)
+        {
+            for (int j = 0; j < C; j++)
+            {
+                cin >> mat2[i][j];
+            }
+        }
+        cout << "Suma dwóch macierzy wynosi: " << endl;
+        for (int i = 0; i < R; i++)
+        {
+            for (int j = 0; j < C; j++)
+            {
+                sum[i][j] = mat1[i][j] + mat2[i][j];
+                cout << sum[i][j] << " ";
+            }
+            cout << endl;
+        }
+        return 0;
+    }
+    //KONIEC PROGRAMU
+
+//Program sumujący elementy tablicy zawierającej liczby typu double
+#include <iostream>
+
+    int main() {
+        int N = 4;
+        double tab[N] = { 1.1, 2.2, 3.3, 4.4 };
+        double sum = 0;
+
+        for (int i = 0; i < N; i++) {
+            sum += tab[i];
+        }
+
+        std::cout << "Suma elementów tablicy: " << sum << std::endl;
+
+        return 0;
+    }
+    //KONIEC PROGRAMU
+
+  
+// Znajdz maksymalny element w tablice typu int orez pierwszy indeks, pod ktorym on znajduje się.
+// Wskazówka: wprowadź zmienną max oraz max_index.
+#include <iostream>
+
+     int main() {
+         int N = 6;
+         int tab[N] = { 3, 7, 2, 9, 1, 4 };
+         int max = tab[0];
+         int max_index = 0;
+
+         for (int i = 1; i < N; i++) {
+             if (tab[i] > max) {
+                 max = tab[i];
+                 max_index = i;
+             }
+         }
+
+         std::cout << "Maksymalny element tablicy: " << max << std::endl;
+         std::cout << "Indeks maksymalnego elementu: " << max_index << std::endl;
+
+         return 0;
+     }
+    //KONIEC PROGRAMU
+
+
+/*Napisz program C++, którym przy pomocy pętli for oraz przy pomocy operatora for_each :
+     
+     * Zdefiniuj i zinicjalizuj wektor z 10 elementami typu char i wypisz go na konsoli.
+     * Zdefiniuj i zinicjalizuj wektor z 10 liczbami typu int i wypisz na konsoli parzysty liczby.
+     * Zdefiniuj i zinicjalizuj wektor z 7 liczbami typu double i wypisz na konsoli ich wartości bezwzględny(można użyć bibliotek¡ math.h, #include <cmath>).
+     * Zdefiniuj i zinicjalizuj wektor z 5 słowami(typ string).Wypisz każde słowo w nowym wiersze na konsoli i przez dwukropek ilość liter w nim.*/
+
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include <string>
+
+     int main() {
+         // Zdefiniuj i zinicjalizuj wektor z 10 elementami typu char i wypisz go na konsoli
+         std::vector<char> charVector = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' };
+         for (int i = 0; i < charVector.size(); i++) {
+             std::cout << charVector[i] << " ";
+         }
+         std::cout << std::endl;
+
+         // Zdefiniuj i zinicjalizuj wektor z 10 liczbami typu int i wypisz na konsoli parzysty liczby
+         std::vector<int> intVector = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+         for (int i = 0; i < intVector.size(); i++) {
+             if (intVector[i] % 2 == 0) {
+                 std::cout << intVector[i] << " ";
+             }
+         }
+         std::cout << std::endl;
+
+         // Zdefiniuj i zinicjalizuj wektor z 7 liczbami typu double i wypisz na konsoli ich wartości bezwzględny
+         std::vector<double> doubleVector = { 1.1, -2.2, 3.3, -4.4, 5.5, -6.6, 7.7 };
+         for (int i = 0; i < doubleVector.size(); i++) {
+             std::cout << std::abs(doubleVector[i]) << " ";
+         }
+         std::cout << std::endl;
+
+         // Zdefiniuj i zinicjalizuj wektor z 5 słowami (typ string). Wypisz każde słowo w nowym wiersze na konsoli i przez dwukropek ilość liter w nim
+         std::vector<std::string> stringVector = { "hello", "world", "c++", "programming", "language" };
+         for (int i = 0; i < stringVector.size(); i++) {
+             std::cout << stringVector[i] << ": " << stringVector[i].length() << std::endl;
+         }
+         return 0;
+     }
+     //KONIEC PROGRAMU
+
+
+/*Napisz program C++, w którym zdefniuj wektor długości 15 typu double. 
+Znajdź (wypisz na konsoli):
+    * maksymalny element,
+    * minimalny element,
+    * sum¡ wszystkich elementów,
+    * iloczyn wszystkich elementów,*/
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+     int main() {
+         // Zdefiniuj wektor długości 15 typu double
+         std::vector<double> numbers = { 1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 10.1, 11.11, 12.12, 13.13, 14.14, 15.15 };
+
+         // Znajdź maksymalny element
+         double max = *std::max_element(numbers.begin(), numbers.end());
+         std::cout << "Maksymalny element: " << max << std::endl;
+
+         // Znajdź minimalny element
+         double min = *std::min_element(numbers.begin(), numbers.end());
+         std::cout << "Minimalny element: " << min << std::endl;
+
+         // Oblicz sumę wszystkich elementów
+         double sum = 0;
+         for (int i = 0; i < numbers.size(); i++) {
+             sum += numbers[i];
+         }
+         std::cout << "Suma wszystkich elementów: " << sum << std::endl;
+
+         // Oblicz iloczyn wszystkich elementów
+         double product = 1;
+         for (int i = 0; i < numbers.size(); i++) {
+             product *= numbers[i];
+         }
+         std::cout << "Iloczyn wszystkich elementów: " << product << std::endl;
+
+         return 0;
+     }
+     //KONIEC PROGRAMU
+
+
+/*Napisz program C++, w którym zdefiniuj i zainicjalizuj dwa wektory z tą samą ilością elementów.
+Oblicz i zapisz do (trzeciego wektora) i wypisz na konsoli ich sumę.*/
+#include <iostream>
+#include <vector>
+
+     int main() {
+         // Zdefiniuj i zainicjalizuj dwa wektory z tą samą ilością elementów
+         std::vector<double> vector1 = { 1.1, 2.2, 3.3, 4.4 };
+         std::vector<double> vector2 = { 5.5, 6.6, 7.7, 8.8 };
+
+         // Oblicz i zapisz do (trzeciego wektora) i wypisz na konsoli ich sumę
+         std::vector<double> vectorSum(vector1.size());
+         for (int i = 0; i < vector1.size(); i++) {
+             vectorSum[i] = vector1[i] + vector2[i];
+             std::cout << vectorSum[i] << " ";
+         }
+         std::cout << std::endl;
+
+         return 0;
+     }
+     //KONIEC PROGRAMU
+
+/*Napisz program C++ który znajduje pierwszy liczby, mniejsze od N algorytmem Sito Eratostenesa :
+ https://pl.wikipedia.org/wiki/Sito_Eratostenesa
+ Wskazówka:
+     it = remove_if(pocz¡tek, koniec, [argument, u»ywany w warunku](int n) return warunek; );
+         usuwa elementy wektora zgodnie z warunkiem i zwraca iterator na koniec nowego wektora*/
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+         int main()
+     {
+         int N;
+         std::cout << "Podaj N: ";
+         std::cin >> N;
+
+         // Tworzenie wektora z liczbami od 2 do N
+         std::vector<int> vec;
+         std::cout << "Wektor: ";
+         for (int i = 2; i <= N; i++)
+         {
+             vec.push_back(i);
+             std::cout << i << " ";
+         }
+         std::cout << std::endl;
+         // Sito Eratostenesa
+         for (int i = 2; i <= sqrt(N); i++)
+         {
+             vec.erase(std::remove_if(vec.begin(), vec.end(),
+                 [i](int n) { return n % i == 0 && n != i; }),
+                 vec.end());
+         }
+
+         // Wypisanie pierwszych liczb mniejszych niż N
+         std::cout << "Pierwsze liczby mniejsze niz " << N << " to: ";
+         for (int val : vec)
+             std::cout << val << " ";
+         std::cout << std::endl;
+
+         return 0;
+     }
+    //KONIEC PROGRAMU
+
